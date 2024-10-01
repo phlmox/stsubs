@@ -25,4 +25,4 @@ fi
 curl --request GET --url "https://api.securitytrails.com/v1/domain/$1/subdomains?children_only=false&include_inactive=true" \
   -H "accept: application/json" \
   -H "apikey: $stapikey" | \
-  jq .subdomains[] | cut -d'"' -f 2 | sed "s/$/\.${1}\.com/"
+  jq .subdomains[] | cut -d'"' -f 2 | sed "s/$/\.${1}/"
